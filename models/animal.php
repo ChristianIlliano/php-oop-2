@@ -1,20 +1,37 @@
 <?php
-class Animal
-{
-    public string $categoria;
+class Animal {
+    public string $Animal;
+    private string $icon;
 
-    public function __construct(string $categoria)
+    public function __construct(string $Animal)
     {
         //  controllo se quello scritto è un valore consentito
-        if (strtolower($categoria) === "cane" || strtolower($categoria) === "gatto") {
-            $this->categoria = $categoria;
+        if (strtolower($Animal) === "cane" || strtolower($Animal) === "gatto") {
+            $this->Animal = $Animal;
         } else {
             throw new Exception("inserisci come tipo Cane o Gatto");
         }
     }
 
-    public function getCategoria()
+    public function getCAnimal()
     {
-        return $this->categoria;
+        return $this->Animal;
+    }
+
+    /**
+     * Get the value of icon
+     */ 
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
+    /**
+     * Set the value of icon
+     *
+     */ 
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
     }
 } 

@@ -6,10 +6,26 @@ class Cibo extends Product {
     private int $peso;
     private string $scadenza;
 
-public function __construct(string $_name, string $_categoria, int $_price, int $_peso, string $_scadenza) {
-    parent::__construct($_name, $_categoria, $_price);
+public function __construct(string $_name, int $_price, int $_peso, string $_scadenza) {
+    parent::__construct($_name, $_price);
     $this->peso = $_peso;
     $this->scadenza = $_scadenza;
 }
+
+    /**
+     * Get the value of peso
+     */ 
+    public function getPeso()
+    {
+        return $this->peso;
+    }
+
+    /**
+     * Get the value of scadenza
+     */ 
+    public function getScadenza()
+    {
+        return $this->scadenza;
+    }
 }
 ?>

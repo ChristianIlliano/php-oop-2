@@ -1,20 +1,17 @@
 <?php
 
-class Product {
+class Product
+{
 
     private string $name;
-    public string $categoria;
+    public string $img;
     private int $price;
-    
+    public Animal $Animal;
 
-    public function __construct(string $_name, string $_categoria, int $_price)
+
+    public function __construct(string $_name, int $_price)
     {
         $this->name = $_name;
-        if (strtolower($_categoria) === "cane" || strtolower($_categoria) === "gatto") {
-            $this->categoria = $_categoria;
-        } else {
-            throw new Exception("devi inserire cane o gatto");
-        }
         $this->price = $_price;
     }
 
@@ -26,9 +23,6 @@ class Product {
         return $this->name;
     }
 
-    
-
-
     /**
      * Get the value of price
      */
@@ -37,4 +31,28 @@ class Product {
         return $this->price;
     }
 
+    /**
+     * Get the value of img
+     */ 
+    public function getImg()
+    {
+        if(isset($this->img) && !empty($this->img)) {
+            return $this->img;
+        }
+        return "placeholder";
+    }
+
+    /**
+     * Set the value of img
+     *
+     * @return  self
+     */ 
+    public function setImg($img)
+    {
+        if ($img === "") {
+            throw new Exception("l'immagine non può essere vuota");
+        }
+        $this->img = $img;
+
+    }
 }
