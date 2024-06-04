@@ -17,6 +17,7 @@ public function __construct(string $_name, int $_price, int $_peso, string $_sca
      */ 
     public function getPeso()
     {
+
         return $this->peso;
     }
 
@@ -26,6 +27,20 @@ public function __construct(string $_name, int $_price, int $_peso, string $_sca
     public function getScadenza()
     {
         return $this->scadenza;
+    }
+
+    /**
+     * Set the value of peso
+     *
+     * @return  self
+     */ 
+    public function setPeso(int $peso)
+    {
+        if (strtolower($peso) > 100 || strtolower($peso) < 0) {
+            throw new Exception("peso errato");
+        }
+
+            $this->peso;
     }
 }
 ?>

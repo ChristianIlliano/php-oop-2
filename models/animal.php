@@ -1,5 +1,6 @@
 <?php
-class Animal {
+class Animal
+{
     public string $Animal;
     private string $icon;
 
@@ -13,7 +14,7 @@ class Animal {
         }
     }
 
-    public function getCAnimal()
+    public function getAnimal()
     {
         return $this->Animal;
     }
@@ -33,5 +34,14 @@ class Animal {
     public function setIcon($icon)
     {
         $this->icon = $icon;
+    }
+
+    /**
+     * Set the value of Animal
+     *
+     */ 
+    public function setAnimal($Animal)
+    {
+        $this->Animal = $Animal;
     }
 } 
